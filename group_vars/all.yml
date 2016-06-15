@@ -71,7 +71,10 @@ hl_main_server_ip: "{{hl_network_subnet}}.92"
 # case where there might be more than one DAF)
 # {{ ansible_all_ipv4_addresses | ipaddr(hl_addr_ip_filter) | random }} 
 # Change this for your network.
-hl_addr_ip_filter: "{{hl_network_subnet}}.0/24"
+#hl_addr_ip_filter: "{{hl_network_subnet}}.0/24"
+# This filter will match with host ip addresses like 10.12.34.10 and 10.12.35.6
+# Change this for your network.
+hl_addr_ip_filter: "10.12.0.0/16"
 
 # Docker
 hl_docker_tcp_port: 2375
