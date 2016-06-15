@@ -1,0 +1,6 @@
+# {{ ansible_managed }}
+FROM {{ccd_peer_docker_image}}
+MAINTAINER {{ccd_maintainer_name}}
+ENV CORE_PEER_ADDRESS={{ ccd_core_peer_ip }}
+
+ENTRYPOINT ["peer chaincode deploy -p {{ccd_chaincode_githup_uri}} -c '{{ccd_chaincode_invocation}}'"]

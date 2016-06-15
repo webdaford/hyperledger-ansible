@@ -1,0 +1,16 @@
+---
+# file: chaincodedeployers.yml
+# These definitions are for hosts that deploy chaincode to instances of the Hyperledger 
+# Fabric Network 
+
+- hosts: chaincodedeployers
+  become: true
+  pre_tasks:
+      - assert:
+         that: "ansible_version.major >= {{hl_minimum_ansible_version_major}} and ansible_version.minor >= {{hl_minimum_ansible_version_minor}}"
+  
+  roles:
+    - { role: chaincodedeployer,
+          user: "{{ansible_user}}",
+          group: "{{'staff' if is_macosx else ansible_user}}",
+      }

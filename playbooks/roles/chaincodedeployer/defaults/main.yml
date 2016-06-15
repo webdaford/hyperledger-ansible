@@ -1,0 +1,7 @@
+---
+# defaults file for chaincodedeployer role
+ccd_peer_docker_image: "{{hl_vpeer_docker_image}}"
+ccd_maintainer_name: "{{ansible_user}}"
+ccd_core_peer_ip: "10.12.34.92"
+ccd_chaincode_githup_uri: "github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02"
+ccd_chaincode_invocation: "{\"Function\":\"init\", \"Args\": [\"a\",\"100\", \"b\", \"200\"]}"

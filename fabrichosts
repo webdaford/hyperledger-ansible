@@ -15,6 +15,11 @@ ansibletestclone
 thing1
 tool
 
+# These are machines that will host Docker containers to the deploy
+# chaincode to an instance of the Fabric.
+[chaincodedeployers]
+ansibletestclone
+
 # These are the machines that will participate in the Fabric deployment by
 # hosting Docker containers.
 [dockerhosts]
